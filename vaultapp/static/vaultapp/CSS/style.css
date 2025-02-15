@@ -1,0 +1,1718 @@
+/* GENERAL RESET BY PRASANSHA OJHA  */
+
+/* CSS FOR ALL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for user and date font */
+.text-user, .text-date {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+
+html,
+body {
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1
+ h2,
+h3,
+h4,
+h5,
+h6 
+{ 
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    /* font-family: 'Great-vibes', cursive; */
+    color: #20014a;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: inherit;
+}
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
+.btn{
+    padding:.3rem 1.2rem;
+    background:rgb(121, 113, 121);
+    color:white !important ;
+    border:1px solid transparent;
+    border-radius:.25rem;
+}
+.btn-big{
+    padding:.7em 1.3rem;
+    line-height:1.3rem;
+}
+.btn:hover{
+    background:rgb(61, 36, 61);
+    color:white !important;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Header Styles */
+header {
+    background: white;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+/* Logo Section */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5em;
+}
+
+header .logo-text span {
+    color: rgb(1, 3, 40);
+}
+
+body .logo {
+    display: flex;
+    align-items: center;
+}
+
+body .logo-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5em;
+}
+
+body .logo-text span {
+    color: rgb(1, 3, 40);
+}
+
+/* Navigation Menu */
+.nav {
+    display: flex;
+    list-style: none;
+    gap: -0.5rem;
+
+}
+
+.nav li {
+    position: relative;
+    font-weight: bold;
+    font-size: large;
+}
+
+.nav li ul {
+    position: absolute;
+    top: calc(100% + 5px); /* Add some spacing below the parent */
+    left: 0; /* Align to the left edge of the parent element */
+    display: none; /* Hide by default */
+    right:0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it appears above other content */
+    list-style: none;
+    padding: 0.5rem 0;
+    width: 150px;
+    border-radius: 4px; /* Add rounded corners for better aesthetics */
+}
+
+
+
+.nav li ul li {
+    padding: 0.5rem 1rem;
+    margin:0;
+}
+
+.nav li ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color:  rgb(1, 3, 40);
+    font-size: 15px;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+    
+}
+
+.nav li:hover ul {
+    display: block ;
+    font-family: 'Times New Roman', Times, serif;
+    /* Show submenu on hover (desktop) */
+}
+
+.nav li a {
+    text-decoration: none;
+    color: rgb(4, 1, 66);
+    padding: 10px 15px;
+    display: inline-block;
+    position: sticky !important ;
+}
+
+/* Hover Effect */
+.hover-line::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: rgb(1, 6, 42);
+    transition: width 0.3s ease;
+}
+
+.hover-line:hover::after {
+    width: 100%;
+}
+.nav li ul li a:hover {
+    background-color: #007BFF;
+    color: #fff;
+   
+}
+
+
+/* Show dropdown on hover */
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul.center-dropdown {
+    left: 50%; /* Center horizontally relative to the parent */
+    transform: translateX(-50%); /* Adjust for exact centering */
+}
+
+/* CSS FOR ALL ENDS HERE  */
+
+/* FOR TENDING BLOG  */
+
+.page-wrapper{
+    min-height:100%;
+}
+
+
+.post-slider {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px 0;
+}
+
+.slider-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.post-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.slider-image1{
+    width: 80%;
+    height: 300px;
+    position: left;
+
+}
+
+.slider-image {
+    width: 100%;
+    height: auto;
+}
+
+
+.page-wrapper .post {
+    width: 300px;
+    height: 350px;
+    /* Adjust as per your layout */
+    padding: 20px;
+    margin: 0 10px;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    background: rgb(244, 242, 242);
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem gray;
+
+    
+}
+
+.post-slider .post-wrapper .post .post-info {
+    height: 150px;
+    padding: 0px 5px;
+}
+
+
+
+.post-slider .post-wrapper .post .slider-image {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/* Styling for the <h4> tag */
+.post-info h4 {
+    font-size: 1.3rem; /* Adjust size as needed */
+    margin: 10px 0; /* Space around the heading */
+    font-family: 'Times New Roman', Times, serif; /* Choose your desired font */
+    font-weight: bold;
+    color: #333; /* Dark text color */
+}
+
+/* Styling for the link inside the <h4> */
+.post-info h4 a {
+    text-decoration: none; /* Remove underline */
+    color:#20014a; /* Blue link color */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the link */
+.post-info h4 a:hover {
+    color: #d90505; /* Darker blue on hover */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Focus or active state */
+.post-info h4 a:focus, .post-info h4 a:active {
+    outline: none; /* Remove default outline */
+    border-bottom: 2px solid #0056b3; /* Underline effect on focus */
+}
+
+
+.info-group {
+    display: flex;
+    /* align-items: center; */
+    font-size: 18px;
+    vertical-align: middle;
+    font-weight: bold;
+    gap: 5px; /* Spacing between the icon and the text */
+}
+
+.info-group i {
+    display: inline-block;
+    
+    vertical-align: middle; /* Ensures the icon behaves like inline text */
+}
+
+/* TRENDING BLOG ENDS HERE */
+
+
+/* LATEST BLOG STARTS HERE  */
+
+
+.content{
+    width:90%;
+    margin:30px auto 30px;
+    
+}
+.content .main-content{
+    width:70%;
+    float:left;
+  
+
+}
+
+.content .main-content .recent-post-title {
+    text-align: left;
+    font-size: 1.8rem; /* Responsive font size */
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Individual Post */
+.content .main-content .post {
+    display: flex; /* Align image and content horizontally */
+    align-items: flex-start; /* Top-align items vertically */
+    gap: 15px; /* Add spacing between elements */
+    width: 90%; /* Full container width */
+    margin-bottom: 20px; /* Space between posts */
+    padding: 15px;
+    border-radius: 8px;
+    background: rgb(239, 233, 233); /* Light gray background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Post Image */
+.content .main-content .post img.post-image {
+    width: 30%; /* Image occupies 30% of the post width */
+    max-height: 150px; /* Limit height for consistent sizing */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+    border-radius: 5px; /* Rounded corners for images */
+    flex-shrink: 0; /* Prevent image from resizing */
+}
+
+/* Post Preview Section */
+.content .main-content .post .post-preview {
+    flex-grow: 1; /* Allow content to expand */
+    padding: 10px 15px;
+    color: #333; /* Text color */
+}
+
+/* Post Title */
+.content .main-content .post .post-preview h2 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: #20014a; /* Title color */
+    text-align: left;
+}
+
+/* Post Title Link */
+.content .main-content .post .post-preview h2 a {
+    text-decoration: none; /* Remove underline */
+    color: #20014a;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the link */
+.content .main-content .post .post-preview h2 a:hover {
+    color: #d90505; /* Highlight color on hover */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Post Metadata */
+.content .main-content .post .post-preview i {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray for metadata */
+}
+
+/* Preview Text */
+.content .main-content .post .post-preview .preview-text {
+    margin-bottom: 10px;
+    color: #555; /* Slightly darker gray for preview text */
+    font-size: 1rem;
+    line-height: 1.6;
+    max-height: 4.8rem; /* Limit text height to 3 lines */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+/* LATEST POST SECTION ENDS HERE  */
+
+/* you may also like  */
+
+/* you may also like ends */
+
+
+/* WANNA WRITE YOUR OWN BLOG? CSS SECTION  */
+
+.buttoncontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: white; /* Gradient background */
+    color: black;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the inner container */
+.futureselfbutton {
+    background: #f9f9f9; /* Semi-transparent black */
+    border-radius: 10px;
+    padding: 40px 20px;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+.futureselfbutton h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.futureselfbutton h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Button styling */
+.futureselfbutton .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background: #20014a; /* Bright orange */
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects for the button */
+.futureselfbutton .submit-btn:hover {
+    background:   #20014a ; /* Darker orange */
+    transform: translateY(-2px);
+}
+
+/* Icon inside the button */
+.futureselfbutton .submit-btn .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .futureselfbutton {
+        padding: 30px 15px;
+    }
+
+    .futureselfbutton h2 {
+        font-size: 1.8rem;
+    }
+
+    .futureselfbutton h3 {
+        font-size: 1rem;
+    }
+
+    .futureselfbutton .submit-btn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
+
+/* WRITE LETTER TO YOUR FUTURE SELF ENDS HERE */
+
+/* Email Section */
+.email-section {
+    background-color: #ebe3e3;
+    /* White background for email section */
+    padding: 40px 20px;
+    /* Increased padding for more space */
+    text-align: center;
+    color: #333;
+    /* Dark text color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for depth */
+    margin-top: 40px;
+    /* Space between posts and email section */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header styling */
+.email-section h2 {
+    font-family: 'Times New Roman', Times, serif ;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #000e10;
+    /* Blue color for heading */
+}
+
+/* Form styling */
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.email-form input {
+    padding: 12px;
+    width: 300px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f8f7f7;
+    transition: border-color 0.3s;
+}
+
+.email-form input:focus {
+    border-color: #010823;
+    /* Blue border on focus */
+    outline: none;
+}
+
+.email-form button {
+    background-color: #040965;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    color: rgb(239, 201, 201);
+    transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+    background-color: #8b9fe3;
+    /* Darker blue on hover */
+}
+
+.email-form .icon {
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+/* Footer kristii*/
+.footer {
+    background:rgb(100, 98, 99);
+    color:white;
+    height:400px;
+    position:sticky;
+    width:100%;
+}
+.footer .footer-content{
+   
+    height:350px;
+    display:flex;
+}
+
+.footer .footer-content .footer-section{
+    flex: 1;
+    padding:25px;
+    
+}
+
+.footer .footer-content .about .contact span{
+    display:block;
+    font-size:1.1em;
+    margin-bottom:8px;
+}
+.footer .footer-content .about  .socials a{
+    border: 1px solid gray;
+    width: 45px;
+    height: 41px;
+    padding-top:5px;
+    text-align:center;
+    display:inline block;
+    font-size:1.3em;
+    border-radius:5px;
+    transition:all .3s;
+}
+.footer .footer-content .about  .socials a:hover{
+    border: 1px solid white;
+    color:white;
+    transition:all .3s;
+}
+.footer .footer-content .links ul a{
+    display: block;
+    margin-bottom:10px;
+    font-size:1.2em;
+    transition:all .3s;
+}
+.footer .footer-content .links ul a:hover{
+    color: white;
+    margin-left:15px;
+    transition:all .3s;
+}
+.footer .footer-content .contact-form .contact-input {
+    background: #666;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.5rem;
+    padding: 0.9rem 1.4rem;
+    border: none;
+    width: 100%; /* Makes the input span the full width of its container */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width */
+}
+
+
+.footer .footer-content .contact-form .contact-input:focus{
+    background:rgb(43, 41, 41);
+
+}
+.footer .footer-content .contact-form .contact-btn{
+    float:right;
+    
+}
+
+
+.footer .footer-content .contact-form .contact-input::placeholder {
+    color: #ccc; /* Lighter placeholder text */
+    font-family:'Times New Roman', Times, serif ; /* Optional stylistic choice */
+}
+
+
+footer .footer-bottom {
+    background: grey;
+    color: white;
+    height: 50px;
+    text-align: center; /* Horizontally centers the text */
+     /*position: fixed; /* Sticks the footer to the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ensures the footer spans the full width */
+    display: flex; /* Enables flexbox for content alignment */
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center; /* Vertically centers the text */
+    padding: 0;
+    margin: 0;
+     /*z-index: 1000; /* Ensures footer stays above other content */
+}
+/* FOOTER ENDS HERE */
+
+/* about us */
+
+/* About Section Styling */
+ #about-us {
+    background: linear-gradient(135deg, #f2f2f2, #ffffff);
+    padding: 5rem 2rem;
+    color: #03024e;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  h3{
+    font-weight: bold;
+    font-size: 35px;
+  }
+  .container {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+  }
+  
+ .about-section {
+    margin-bottom: 3rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  } 
+  
+  /* Heading for each section */
+  .about-section h3 {
+    font-size: 2.2rem;
+    color: #010333;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+  }
+  
+  .about-section h3::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    /* background-color: #3498db; */
+  }
+  
+  .about-section p,
+  .about-section ul li {
+    font-size: 1.1rem;
+    color: #0c0c0c;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .about-section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* Style for each list item */
+  .about-section ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-section ul li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Hover effect for each section */
+  .about-section:hover {
+    transform: translateY(-10px);
+    opacity: 0.9;
+  }
+  
+  /* Adding some subtle animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply animation to sections */
+  .about-section:nth-child(odd) {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .about-section:nth-child(even) {
+    animation: fadeIn 1.2s ease-out;
+  }
+  
+/* General Section Styling */
+/* General Section Styling */
+#what-we-do {
+    padding: 60px 20px;
+    background-color: #f9f9fb;
+    text-align: center;
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: #040640;
+  }
+  
+  /* #what-we-do h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    /* color: #222; 
+  } */
+  
+  /* Grid Layout */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Card Wrapper */
+  .grid-item {
+    perspective: 1000px; /* Enables 3D effect */
+  }
+  
+  .card {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D for child elements */
+    transition: transform 0.6s ease;
+  }
+  
+  .card:hover {
+    transform: rotateY(180deg); /* Flip on hover */
+  }
+  
+  /* Card Sides */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when not visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-front {
+    background: #fff;
+  }
+  
+  .card-back {
+    background: #120039;
+    color: #fff;
+    transform: rotateY(180deg); /* Hide the back initially */
+  }
+  
+  /* Icon Styling */
+  .card-front .icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  /* Text Styling */
+  .card-front h3 {
+    font-size: 1.5rem;
+    color: #070132;
+  }
+  
+  .card-back p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+/* Kristiii */
+
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none;
+    /* Hidden by default on larger screens */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: rgb(239, 225, 221);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Show toggle icon on mobile */
+    }
+
+    .nav {
+        display: none;
+        /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background: white;
+    }
+
+    .nav.showing {
+        display: flex;
+        /* Show when menu-toggle is clicked */
+    }
+
+    .nav li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav li ul {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Submenu takes full width */
+    }
+}
+
+/* Adjust the size and positioning of the arrows */
+
+.prev,
+.next {
+    font-size: 30px;
+    color: #20014a;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    color: #d90505;
+    /* Hover color */
+}
+
+/* Ensure the arrows are visible on the slider */
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    color: transparent;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+.slick-prev:focus,
+.slick-next:focus {
+    outline: none;
+}
+
+/* Arrow Hover Effects */
+.slick-prev:hover,
+.slick-next:hover {
+    color: #d90505;
+}
+
+/* Slick Theme CSS */
+/* Slick Slider Navigation (Prev/Next Arrows) */
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    color: transparent;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+/* Slick Arrow Hover Effects */
+.slick-prev:hover, .slick-next:hover {
+    color: #05809c;
+}
+
+/* Slick Slider Arrows (Font Icons) */
+.slick-prev:before, .slick-next:before {
+    font-family: "slick";
+    font-size: 30px;
+    color: #20014a;
+}
+
+/* Slider Image */
+.slick-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Slick Slider Container */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Slick List (Holds all the slides) */
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* Slick Track (Tracks all slides) */
+.slick-track {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Slick Slide */
+.slick-slide {
+    display: block;
+    float: left;
+    height: auto;
+    min-height: 1px;
+}
+
+/* Optional: Adjusting Slick Arrows Color on Hover */
+.slick-prev:hover, .slick-next:hover {
+    color: #05809c;
+}
+
+/* CSS FOR READ LETTER SECTION  */
+/* Wrapper for Posts */
+.post-wrapper-unique {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 20px; /* Space between posts */
+    justify-content: space-between; /* Distribute posts evenly */
+    margin: 20px auto; /* Center the wrapper */
+    width: 100%; /* Adjust the wrapper width */
+    max-width: 1200px; /* Limit max width for responsiveness */
+}
+
+/* Individual Post */
+.post-unique {
+    width: calc(50% - 10px); /* Two posts per row, with spacing */
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow from content */
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    flex-direction: column; /* Stack content vertically */
+    padding: 15px;
+    justify-content: flex-start; /* Align content at the top */
+}
+
+/* Post Image */
+.post-unique .image-unique {
+    width: 100%; /* Full width for the image */
+    max-height: 250px; /* Limit image height */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+/* Post Info */
+.post-unique .post-info-unique {
+    padding: 10px 0;
+    color: #333; /* Text color */
+    text-align: left; /* Align text to the left */
+}
+
+/* Post Title */
+.post-unique .post-info-unique h4 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #20014a; /* Title color */
+    text-align: left;
+    text-decoration: none; /* No underline by default */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Title */
+.post-unique .post-info-unique h4:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #d90505; /* Change color on hover */
+    cursor: pointer;
+}
+
+/* Post Description */
+.post-unique .post-info-unique p {
+    margin-bottom: 10px;
+    color: #555; /* Slightly darker gray for text */
+    font-size: 1rem;
+    line-height: 1.5;
+    max-height: 4.8rem; /* Limit text height to 3 lines */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+/* Metadata (Author and Date) */
+.post-unique .post-info i {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray for metadata */
+}
+
+/* Card Footer */
+.post-unique .card-footer {
+    margin-top: 10px; /* Add spacing above the button */
+    text-align: left; /* Align to the left */
+}
+
+/* Read More Button */
+.post-unique .card-footer a {
+    text-decoration: none;
+    color: #333; /* Default button text color */
+    border: 1px solid #333; /* Button border */
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    display: inline-block; /* Keep the button inline */
+}
+
+/* Hover Effect for Button */
+.post-unique .card-footer a:hover {
+    background-color: #333; /* Button background on hover */
+    color: #fff; /* Text color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .post-unique {
+        width: 100%; /* Single post per row on smaller screens */
+    }
+}
+
+
+/* css for postdetail */
+/* for feature photo adjustment */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between main content and sidebar */
+}
+
+.main-content {
+    flex: 3; /* Main content takes 3 parts of the space */
+    max-width: 70%; /* Ensure it doesn’t get too wide */
+}
+/* Ensure the content area has a flex layout */
+.content {
+    display: flex;
+    justify-content: space-between; /* Spread out main content and sidebar */
+    gap: 20px; /* Space between main content and sidebar */
+    padding: 20px;
+}
+
+/* Main content section styles */
+.main-content {
+    flex: 3; /* Main content takes up most of the space */
+}
+
+/* Sidebar section styles */
+.sidebar {
+    flex: 1; /* Sidebar takes up less space */
+    background-color: #f4f4f4; /* Optional background color */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Optional styles for a better visual appearance */
+.sidebar .recommended-blogs ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar .recommended-blogs ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar .recommended-blogs ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.post-image, .slider-image, .slider-image-unique {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.post-preview h2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+#post_detail .slider-image {
+    display: block;
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains the aspect ratio */
+    margin: 0 auto; /* Centers the image */
+    border-radius: 10px; /* Gives a slight rounded corner for a polished look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+#post_detail .slider-image-unique {
+    display: left;
+    max-width: 8in; /* Same responsiveness for the default image */
+    height: 4in;
+    margin: 0 auto;
+    border-radius: 10px;
+    opacity: 0.9; /* Slightly transparent to indicate it's a placeholder */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: grayscale(50%); /* Adds a grayscale effect for a placeholder feel */
+}
+
+@media screen and (min-width: 768px) {
+    #post_detail .slider-image, .slider-image-unique {
+        max-width: 80%; /* Adjust for larger screens */
+    }
+}
+
+
+/* css for the signup  */
+#signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+#signup .form-container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+#signup p {
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#signup .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#signup label {
+    font-size: 14px;
+    font-family: 'Lora', serif;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button styling for signup */
+#signup .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #040965;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#signup .btn:hover {
+    background-color: #000745;
+    transform: scale(1.05);
+}
+
+
+#signup input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1b7bb2;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+}
+
+#signup input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0
+}
+#signup .message-container {
+    margin-top: 20px;
+}
+
+#signup .message-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#signup .message-container li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#signup .message-container .success {
+    background-color: #20014a;
+    color: white;
+}
+
+#signup .message-container .error {
+    background-color: #f44336;
+    color: white;
+}
+
+
+/* css for the signin  */
+#signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;font-family: 'Arial', sans-serif;
+}
+
+
+
+#signin .form-container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+#signin p {
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#signin .input-group  {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#signin label {
+    font-size: 14px;
+    font-family: 'Lora', serif;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* Button styling */
+#signin .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #040965;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#signin .btn:hover {
+    background-color: #000745;
+    transform: scale(1.05);
+}
+
+#signin input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1b7bb2;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+}
+
+#signin input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0
+}
+#signin .message-container {
+    margin-top: 20px;
+}
+
+#signin .message-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#signin .message-container li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#signin .message-container .success {
+    background-color: #20014a;
+    color: white;
+}
+
+#signin .message-container .error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* css for the comment section  */
+#comment .comments-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#comment .comments-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#comment .comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+#comment .comment p {
+    margin: 5px 0;
+}
+
+#comment .comment small {
+    color: #777;
+}
+
+#comment .replies {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+}
+
+#comment .reply {
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#comment textarea {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#comment textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+#comment button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comment button:hover {
+    background-color: #0056b3;
+}
+
+#like-icon {
+    cursor: pointer;
+    color: grey;
+}
+
+#like-icon.liked {
+    color: red; /* Change color when liked */
+}
+
+
+
+.reaction-button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+.reaction-button:hover {
+    transform: scale(1.1);
+}
+
+.reaction-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.reaction-icon.like::before { content: '👍'; }
+.reaction-icon.love::before { content: '❤️'; }
+.reaction-icon.inspired::before { content: '✨'; }
+.reaction-icon.wow::before { content: '😮'; }
+
+/* CSS THATS CAUSING FADING OF BLOG */
+
+.fadeup.post {
+    transform: translateX(-100%);  /* Start off-screen to the left */
+    opacity: 0;                    /* Start invisible */
+    transition: transform 0.5s ease, opacity 0.5s ease;  /* Smooth transition */
+  }
+  
+  /* When the post is in view (triggered by a class, like 'active') */
+  .fadeup.post.active {
+    transform: translateX(0);      /* Slide in */
+    opacity: 1;                    /* Make visible */
+  }
+
+/* futura css */
+/* General Reset for margins and padding */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* Body Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+} */
+
+/* Container for the form */
+.letter-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Title of the form */
+.letter-form-container h1 {
+    text-align: center;
+    color: #20014a;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for each form input */
+/* Container for the entire form */
+.letter-form-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+
+/* Style for form fields */
+.letter-form .form-field {
+    margin-bottom: 20px;
+}
+
+/* Style for the input fields */
+input[type="email"], textarea, input[type="datetime-local"], input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* Style for the checkbox */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Label styling for the fields */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Button styling */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #20014a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #20014a;
+}
+
+/* Adjustments for the title field */
+#titleField {
+    display: none;
+}
+
+/* Responsiveness: Ensure the form is mobile-friendly */
+@media screen and (max-width: 600px) {
+    .letter-form-container {
+        width: 90%;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+}
+
+/* Default thumbs-up icon color */
+.far.fa-heart {
+    color: white;
+}
+
+/* Blue color for liked thumbs-up icon */
+.fas.fa-thumbs-up.liked {
+    color: blue;
+}
+#like-icon {
+    pointer-events: auto;
+}

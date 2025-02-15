@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}
+about
+{% endblock title %}
+{% block content %}
+<section id="about-us">
+    <div class="container">
+    {% comment %} </h2>About AuraBlog</h2> {% endcomment %}
+  
+      <section class="about-section">
+        <h3>Who We Are</h3>
+        <p>
+          AuraBlog is an innovative blogging platform that merges the timeless appeal of journaling with the power of foresight. Here, your personal letters to your future self transform into blog posts—allowing you to reflect, connect, and inspire others with your journey.
+        </p>
+      </section>
+  
+      <section class="about-section">
+        <h3>Our Mission</h3>
+        <p>
+          Our mission is to empower individuals to express themselves today while preserving their thoughts and emotions for tomorrow. Through AuraBlog, we strive to create a community where every voice is heard, every story is valued, and every moment is cherished.
+        </p>
+      </section>
+      <section id="what-we-do">
+        <div class="container">
+          <h3>What We Do</h3>
+          <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="grid-item">
+              <div class="card">
+                <div class="card-front">
+                  <div class="icon">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    {% comment %} <img src="write-icon.png" alt="Write Icon" /> {% endcomment %}
+                  </div>
+                  <h3>Write for Tomorrow</h3>
+                </div>
+                <div class="card-back">
+                  <p>
+                    Let your future self read your thoughts as blog posts, capturing the essence of your emotions and ideas.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Repeat for other cards -->
+            <div class="grid-item">
+              <div class="card">
+                <div class="card-front">
+                  <div class="icon">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </div>
+                  <h3>Share Your Journey</h3>
+                </div>
+                <div class="card-back">
+                  <p>
+                    Share your stories with the world, connecting your personal growth with the community’s inspiration.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+
+
+            <div class="grid-item">
+              <div class="card">
+                <div class="card-front">
+                  <div class="icon">
+                    <i class="fas fa-check-circle"></i>
+
+
+                  </div>
+                  <h3>Preserve Authenticity</h3>
+                </div>
+                <div class="card-back">
+                    <p>Ensure your words remain true to your voice, preserving your unique identity over time.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Add more cards as needed -->
+          </div>
+        </div>
+      </section>
+      
+
+      {% comment %} <section id="what-we-do">
+        <div class="container">
+          <h1>What We Do</h1>
+          <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="grid-item">
+              <div class="icon">
+                <img src="write-icon.png" alt="Write Icon" />
+              </div>
+              <h3>Write for Tomorrow</h3>
+              <p>Let your future self read your thoughts as blog posts, capturing the essence of your emotions and ideas.</p>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="grid-item">
+              <div class="icon">
+                <img src="share-icon.png" alt="Share Icon" />
+              </div>
+              <h3>Share Your Journey</h3>
+              <p>Share your stories with the world, connecting your personal growth with the community’s inspiration.</p>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="grid-item">
+              <div class="icon">
+                <img src="preserve-icon.png" alt="Preserve Icon" />
+              </div>
+              <h3>Preserve Authenticity</h3>
+              <p>Ensure your words remain true to your voice, preserving your unique identity over time.</p>
+            </div>
+      
+            
+          </div>
+        </div>
+      </section> {% endcomment %}
+      
+      
+       {% comment %} <section class="about-section">
+        <h3>What We Do</h3>
+        <ul>
+          <li><strong>Write for Tomorrow:</strong> Let your future self read your thoughts as blog posts, capturing the essence of your emotions and ideas.</li>
+          <li><strong>Share Your Journey:</strong> Share your stories with the world, building a bridge between your personal growth and the community's inspiration.</li>
+          <li><strong>Preserve Authenticity:</strong> AuraBlog ensures that every word you write remains true to your voice, preserving your unique identity.</li>
+          <li><strong>Foster Connection:</strong> Connect with like-minded readers and writers who resonate with your stories, creating meaningful relationships.</li>
+        </ul>
+      </section> {% endcomment %}
+  
+      <section class="about-section">
+        <h3>Why Choose AuraBlog?</h3>
+        <p>
+          AuraBlog is more than just a platform; it’s your personal time capsule and storytelling hub. Whether you're writing letters to your future self or sharing your journey with others, AuraBlog ensures your words echo through time, inspiring you and those around you.
+        </p>
+      </section>
+    </div>
+  </section>
+  
+
+
+<!-- {% comment %} Footer {% endcomment %}
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h1 class="logo-text"><span>AuraBlog</span> </h1>
+            <p>
+                "Welcome to AuraBlog, where dreams meet plans and sass meets purpose. Let’s create a future so bold, even destiny takes notes. Ready to level up?"
+            </p>
+            <div class="contact">
+                <span><i class ="fas fa-phone"></i> &nbsp; 123456</span>
+                <span><i class ="fas fa-envelope"></i> &nbsp; info@aurablog.com</span>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <br>
+            <ul>
+                <a href ="#"><li>Events</li></a>
+                <a href ="#"><li>Team</li></a>
+                <a href ="#"><li>Mentores</li></a>
+                <a href ="#"><li>Gallery</li></a>
+                <a href ="#"><li>Teams and Conditions</li></a>
+            </ul>  
+
+        </div>
+        <div class="footer-section contact-form">
+            <h2>Contact us </h2>
+            <br>
+            <form action="vaultapp/home.html" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="Your email adress...">
+                <textarea name="message"  class="text-input contact-input" placeholder="Your message..."></textarea>
+                <button type="submit" class="btn btn-big contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        &copy; yourthoughtsmatter.com | Designed by AuraBLog
+    </div>
+</div> -->
+
+{% endblock content%} 

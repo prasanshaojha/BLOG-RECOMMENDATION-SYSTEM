@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }}
+
+{% endblock title %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'your_styles.css' %}">
+</head>
+
+{% block content %}
+<div class="content">
+    <!-- Main content section -->
+    <div class="main-content">
+        <div id="post_detail" class="post-detail">
+            <h1>{{ blog.title }}</h1>
+            {% if blog.feature_photo %}
+            <img src="{{ blog.feature_image.url }}" alt="Feature Photo" class="slider-image">
+            {% else %}
+            <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="slider-image-unique">
+            {% endif %}
+            &nbsp;
+            &nbsp;
+            <div>
+                {% autoescape off %}
+                <p>{{ blog.content|linebreaks }}</p>
+                {% endautoescape %}
+            </div>
+            <p><strong>Shared on:</strong> Published on {{ blog.created_at|date:"F j, Y" }}</p>
+        </div>
+
+        </div>
+    </div>
+
+    
+
+
+
+{% endblock content %}
+
+<script>
+    function showLoginPrompt(action) {
+        document.getElementById('loginPrompt').style.display = 'block';
+        var promptText = action === 'react' ? 'react to this post' : 'comment on this post';
+        document.getElementById('loginPromptText').innerHTML = 'Please <a href="{% url "signin" %}">login</a> to ' + promptText + '.';
+    }
+
+    function closeLoginPrompt() {
+        document.getElementById('loginPrompt').style.display = 'none';
+    }
+</script>

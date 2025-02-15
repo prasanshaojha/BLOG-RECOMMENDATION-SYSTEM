@@ -1,0 +1,377 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }}
+
+{% endblock title %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'vaultapp/CSS/style.css' %}">
+    <style>
+        /* Add styling for tables for better readability */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+
+{% block content %}
+
+<div class="content">
+    <!-- Main content section -->
+    <div class="main-content">
+        <div id="post_detail" class="post-detail">
+            <h1>{{ post.title }}</h1>
+            {% if post.feature_photo %}
+            <img src="{{ post.feature_photo.url }}" alt="Feature Photo" class="slider-image1">
+            {% else %}
+            <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="slider-image1">
+            {% endif %}
+            <p>{{ post.description }}</p>
+            <p><strong>Shared by:</strong> {{ post.nickname }}</p>
+            <p><strong>Shared on:</strong> {{ post.shared_date|date:"F j, Y" }}</p>
+        </div>
+        <!-- Like Icon -->
+        <div class="like-section">
+            <i id="like-icon-{{ post.id }}" class="far fa-heart" onclick="handleLikeClick('{{ post.id }}');"></i>
+
+            <span id="like-count-{{ post.id }}">{{ like_count }} Likes</span>
+        </div>
+
+
+        <p><strong>Views:</strong> {{ post.view_count }}</p>
+        <!-- Comment List Section -->
+
+        <i id="icon" class="far fa-comment"></i>
+
+        <span>
+            <!-- Display the comment count and toggle link -->
+            <a href="#" onclick="toggleComments('{{ post.id }}'); return false;">
+                Comments ({{ post.comments.count }})
+            </a>
+        </span>
+
+        <!-- Hidden comment section -->
+        <div id="comments-section-{{ post.id }}" style="display: none;">
+            <div id="comment" class="comments-section"></div>
+            {% for comment in post.comments.all %}
+            <div class="comment">
+                <p><strong>{{ comment.user.username }}:</strong></p>
+                <p>{{ comment.content }}</p>
+                <p><small>{{ comment.created_at|date:"F j, Y H:i" }}</small></p>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <!-- Comment Form -->
+        <form method="POST" action="{% url 'add_comment' post.id %}" {% if not user.is_authenticated %}
+            onsubmit="showLoginPrompt('comment'); return false;" {% endif %}>
+            {% csrf_token %}
+            <textarea name="content" placeholder="Add a comment..." required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        <br>
+        <h2>You may also like </h2>
+        {% for blog in recommended_blogs %}
+        <div class="post">
+            {% if blog.feature_photo %}
+            <img src="{{ blog.feature_photo.url }}" alt="Feature Photo" class="post-image">
+            {% else %}
+            <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="post-image">
+            {% endif %}
+            <div class="post-preview">
+                <h2>
+                    <a href="{% url 'post_detail' blog.id %}">{{ blog.title }}</a>
+                </h2>
+                <div class="info-group">
+                    <i class="far fa-user"></i> {{ blog.nickname }}
+                    <i class="far fa-calendar"> </i>{{ blog.shared_date|date:"F j, Y" }}
+                </div>
+                <p class="preview-text">{{ blog.description|truncatewords:30 }}</p>
+                <a href="{% url 'post_detail' blog.id %}" class="btn btn-outline-dark btn-sm">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Sidebar section -->
+    <aside class="sidebar">
+        <div class="recommended-blogs">
+            <h2>Check out other letters</h2>
+            &nbsp
+            &nbsp
+            <ul>
+                {% for blog in recommended_blogs2 %}
+                <li>
+                    <a href="{% url 'post_detail' blog.id %}">{{ blog.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+</div>
+
+<!-- <h2>Interaction DataFrame Preview</h2>
+{% autoescape off %}
+{{ interaction_df_preview }}
+{% endautoescape %}
+
+<h2>Filtered NaN User DataFrame Preview</h2>
+{% autoescape off %}
+{{ filtered_nan_user_preview }}
+{% endautoescape %}
+
+<h2>Interaction Matrix</h2>
+{% autoescape off %}
+{{ interaction_matrix }}
+{% endautoescape %}
+
+<h2>User Similarity Matrix</h2>
+{% autoescape off %}
+{{ user_similarity_matrix | safe }}
+{% endautoescape %}
+
+<h2>Similar Users</h2>
+{% autoescape off %}
+<div>{{ Similar_Users | safe }}</div>  
+{% endautoescape %}
+ -->
+
+
+
+
+
+
+<!-- Interaction Matrix -->
+<!-- <div>
+    <h3>Interaction Matrix</h3>
+    <p>This is the matrix that represents the interactions between users and blog posts:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                {% for column in interaction_matrix.0 %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in interaction_matrix %}
+                <tr>
+                    <td>{{ row.user }}</td>
+                    {% for column in row %}
+                        {% if column != 'user' %}
+                            <td>{{ column }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+ -->
+<!-- User Similarity Matrix -->
+<!-- <div>
+    <h3>User Similarity Matrix (Cosine Similarity)</h3>
+    <p>This matrix shows the cosine similarity between users:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                {% for column in user_similarity_matrix.0 %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in user_similarity_matrix %}
+                <tr>
+                    <td>{{ row.user }}</td>
+                    {% for column in row %}
+                        {% if column != 'user' %}
+                            <td>{{ column }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<h3>Top 5 Similar Users' Interactions</h3>
+<p>Below is the list of user with similar:</p>
+<table>
+    <thead>
+        <tr>
+            <th>User ID</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for interaction in top_10_similar_users_interactions %}
+            <tr>
+                <td>{{ interaction.user }}</td>
+                
+            </tr>
+        {% endfor %}
+    </tbody>
+</table> -->
+
+
+
+
+<!-- Login Prompt Modal -->
+<div id="loginPrompt" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginPrompt()">&times;</span>
+        <p id="loginPromptText">Please <a href="{% url 'signin' %}">login</a> to <span id="actionType"></span>.</p>
+    </div>
+</div>
+<script src="{% static 'vaultapp/js/home.js' %}" defer></script>
+
+
+<script>
+    // Function to toggle the visibility of the comments section
+    function toggleComments(postId) {
+        const commentsSection = document.getElementById(`comments-section-${postId}`);
+        if (commentsSection.style.display === "none") {
+            commentsSection.style.display = "block"; // Show comments
+        } else {
+            commentsSection.style.display = "none"; // Hide comments
+        }
+    }
+
+    function handleLikeClick(postId) {
+        const likeIcon = document.getElementById(`like-icon-${postId}`);
+        const likeCountElement = document.getElementById(`like-count-${postId}`);
+
+        // Get the current like count
+        let currentLikeCount = parseInt(likeCountElement.innerText.split(' ')[0]);
+
+        // Toggle the like state
+        if (likeIcon.classList.contains('far')) {
+            // Change to filled heart (liked)
+            likeIcon.classList.remove('far');
+            likeIcon.classList.add('fas');
+            currentLikeCount++;
+        } else {
+            // Change to empty heart (unliked)
+            likeIcon.classList.remove('fas');
+            likeIcon.classList.add('far');
+            currentLikeCount--;
+        }
+
+        // Update the like count displayed on the page
+        likeCountElement.innerText = `${currentLikeCount} Likes`;
+
+        // Optionally, send the updated like data to the server
+        updateLikeInDatabase(postId, currentLikeCount);
+    }
+
+    function updateLikeInDatabase(postId, currentLikeCount) {
+        fetch('/update-like', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                postId: postId,
+                likeCount: currentLikeCount
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("Like interaction stored successfully!");
+                } else {
+                    console.error("Error storing like interaction.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }
+
+
+
+
+    //     function handleLikeClick(postId) {
+    //     const likeIcon = document.getElementById(`like-icon-${postId}`);
+    //     const likeCountElement = document.getElementById(`like-count-${postId}`);
+    //     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    //     fetch(`/toggle_like/${postId}/`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'X-CSRFToken': csrfToken,
+    //         },
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         if (data.error) {
+    //             alert(data.error);
+    //         } else {
+    //             // Update the like icon and count
+    //             if (data.liked) {
+    //                 likeIcon.classList.add('fas', 'liked');
+    //                 likeIcon.classList.remove('far');
+    //             } else {
+    //                 likeIcon.classList.remove('fas', 'liked');
+    //                 likeIcon.classList.add('far');
+    //             }
+    //             likeCountElement.textContent = `${data.like_count} Likes`;
+    //         }
+    //     })
+    //     .catch(error => console.error('Error:', error));
+    // }
+
+
+
+    function showLoginPrompt(action) {
+        document.getElementById('loginPrompt').style.display = 'block';
+        var promptText = action === 'react' ? 'react to this post' : 'comment on this post';
+        document.getElementById('loginPromptText').innerHTML = 'Please <a href="{% url "signin" %}">login</a> to ' + promptText + '.';
+    }
+
+    function closeLoginPrompt() {
+        document.getElementById('loginPrompt').style.display = 'none';
+    }
+
+
+
+
+
+    // Utility to get CSRF token from the cookie
+    function getCSRFToken() {
+        const csrfCookie = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('csrftoken='));
+        return csrfCookie ? csrfCookie.split('=')[1] : null;
+    }
+
+
+</script>
+{% endblock content %}

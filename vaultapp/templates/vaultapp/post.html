@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+<div class="post-wrapper-unique">
+    <!-- Loop through the posts -->
+    {% for public_letter in object_list %}
+    <div class="fadeup post-unique">
+        <!-- Display feature photo if available -->
+        {% if public_letter.feature_photo %}
+        <img src="{{ public_letter.feature_photo.url }}" alt="Feature Photo" class="image-unique">
+        {% else %}
+        <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="image-unique">
+        {% endif %}
+
+        <div class="post-info-unique">
+            <a href="{% url 'post_detail' public_letter.id %}"><h4>{{ public_letter.title }}</h4></a>
+            
+            <p class="my-2">{{ public_letter.description|truncatewords:50 }}</p>
+            <i class="far fa-user"> </i>
+            <span class="text-user">{{ public_letter.nickname }}</span>
+            &nbsp;
+            <i class="far fa-calendar"> </i>
+            <span class="text-date">{{ public_letter.shared_date|date:"F j, Y" }}</span>
+        </div>
+        
+        <div class="card-footer p-0 text-center">
+            <a href="{% url 'post_detail' public_letter.id %}" class="btn btn-outline-dark btn-sm">READ MORE</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="{% static 'vaultapp/js/home.js' %}" defer></script>
+{% endblock content %}

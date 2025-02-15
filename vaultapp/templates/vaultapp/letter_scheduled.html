@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Letter Scheduled{% endblock %}
+
+{% block content %}
+<section class="containt">
+    <h1>Your Letter Has Been Scheduled!</h1>
+    <p>Thank you for writing a letter to your future self. It will be sent on the specified date.</p>
+    <a href="{% url 'write_letter' %}">Write Another Letter</a>
+</section>
+{% endblock %}

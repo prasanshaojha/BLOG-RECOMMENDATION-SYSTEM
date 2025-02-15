@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+<!-- Hi deepsova karki changes is made here pull -->
+{% block content %}
+
+<!-- TRENDING SLIDE SECTION -->
+<div class="page-wrapper">
+
+    <div class="post-slider">
+        <h1 class="slider-title">Trending Posts</h1>
+
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+
+        <div class="post-wrapper multiple-items">
+            {% for public_letter in trending_posts %}
+                <div class="post">
+                    {% if public_letter.feature_photo %}
+                    <img src="{{ public_letter.feature_photo.url }}" alt="Feature Photo" class="post-image">
+                    {% else %}
+                    <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="post-image">
+                    {% endif %}                    <div class="post-info">
+                        <h4><a href="{% url 'post_detail' public_letter.id %}">{{ public_letter.title }}</a></h4>  <!-- Link to the post detail page -->
+                        <div class="info-group">
+                            <i class="far fa-user"></i>
+                            <span class="text-user">{{ public_letter.nickname }}</span>  <!-- Assuming there is an 'author' field -->
+                            &nbsp;
+                            <i class="far fa-calendar"></i>
+                            <span class="text-date">{{ public_letter.shared_date|date:"F j, Y" }}</span>  <!-- Formatting the date -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<!-- TRENDING SLIDE SECTION ENDS -->
+
+    
+    <!-- FOR LATEST POST -->
+     
+    <section class="content">
+        <div class="main-content">
+            <h1 class="recent-post-title">Recent Posts</h1>
+            {% for public_letter in latest_posts %}
+            <div class="fadeup post">
+                {% if public_letter.feature_photo %}
+                <img src="{{ public_letter.feature_photo.url }}" alt="Feature Photo" class="post-image">
+                {% else %}
+                <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="post-image">
+                {% endif %}
+    
+                <div class="post-preview">
+                    <h2>
+                        <a href="{% url 'post_detail' public_letter.id %}">{{ public_letter.title }}</a>
+                    </h2>
+                    <div class="post-info">
+                        <div class="info-group">
+                            <i class="far fa-user"></i>
+                            <span class="text-user">{{ public_letter.nickname }}</span>
+                        </div>
+                        <div class="info-group">
+                            <i class="far fa-calendar"></i>
+                            <span class="text-date">{{ public_letter.shared_date|date:"F j, Y" }}</span>
+                        </div>
+                    </div>
+
+                    <p class="preview-text">
+                        {{ public_letter.description|truncatewords:30 }}
+                    </p>
+                    <a href="{% url 'post_detail' public_letter.id %}" class="btn btn-outline-dark btn-sm">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section> 
+<!-- LATEST SECTION ENDS HERE  -->
+    
+<section class="buttoncontent">
+    <div class="futureselfbutton"> 
+        <h2>FUTURA</h2>
+        <h3>Wanna write a letter to your future self?</h3>
+        <a href="{% url 'write_letter' %}" class="submit-btn btn-outline-dark btn-sm">
+            <span class="icon">&#9993;</span> 
+            Write Your Letter
+        </a>
+    </div>
+</section>
+</div> 
+
+
+
+
+{% comment %} kristi {% endcomment %}
+
+<!-- jQuery -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="{% static 'vaultapp/js/home.js' %}" defer></script>
+
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Write Your Letter{% endblock %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'vaultapp/CSS/style.css' %}">
+</head>
+
+{% block content %}
+<div class="letter-form-container">
+    <h1>Write a Letter to Your Future Self</h1>
+    
+    <form method="POST" class="letter-form">
+        {% csrf_token %}
+
+        <div class="form-field">
+            {{ form.content }}
+        </div>
+        
+        <div class="form-field"><p>Email</p>
+            {{ form.recipient_email }}
+        </div>
+        
+      
+
+        <div class="form-field">
+            {{ form.send_date }}
+        </div>
+
+        <div class="form-field">
+            <p>Post Publicly?</p>
+            {{ form.is_public }}
+        </div>
+
+        <!-- Title Field (Initially Hidden) -->
+        <div id="titleField" class="form-field" style="display:none;">
+            {{ form.title }}
+        </div>
+
+        <button type="submit" class="submit-btn">Schedule Letter</button>
+    </form>
+</div>
+
+<section class="content">
+<div class="post-wrapper-unique">
+
+        
+        {% for blog in blogs %}
+        <div class="post-unique">
+            {% if blog.feature_photo %}
+            <img src="{{ blog.feature_image.url }}" alt="Feature Photo" class="slider-image">
+            {% else %}
+            <img src="{% static 'vaultapp/images/5.jpg' %}" alt="Default Image" class="slider-image-unique">
+            {% endif %}
+            <div class="post-info-unique">
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.description|truncatewords:20 }}</p>
+            <div class="info-group">
+
+            <a href="{% url 'blog_detail' blog.id %}" class="btn read-more">Read More</a>
+        </div>
+    </div>
+        </div>
+        {% endfor %}
+
+</div>
+</section>
+
+{% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Set the minimum date and time dynamically
+        const dateInput = document.querySelector('input[type="datetime-local"]');
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const minDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+        
+        // Set the min attribute for the datetime-local input
+        dateInput.setAttribute('min', minDate);
+        
+        // Toggle title field visibility based on checkbox
+        const isPublicCheckbox = document.getElementById('id_is_public');
+        const titleField = document.getElementById('titleField');
+        
+        if (isPublicCheckbox.checked) {
+            titleField.style.display = 'block';
+        }
+
+        isPublicCheckbox.addEventListener('change', function () {
+            titleField.style.display = isPublicCheckbox.checked ? 'block' : 'none';
+        });
+    });
+</script>
